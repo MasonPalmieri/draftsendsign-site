@@ -1,116 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Draft Send Sign</title>
 
-<title>Draft.Send.Sign</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+body{
+margin:0;
+font-family:'Inter', sans-serif;
+background:#0f172a;
+color:white;
+text-align:center;
+}
+
+.hero{
+padding:120px 20px;
+animation:fadeIn 1.2s ease;
+}
+
+.logo{
+width:240px;
+margin-bottom:40px;
+}
+
+h1{
+font-size:52px;
+margin-bottom:10px;
+}
+
+.tagline{
+font-size:20px;
+color:#cbd5f5;
+margin-bottom:30px;
+}
+
+.coming{
+color:#22c55e;
+font-size:26px;
+font-weight:600;
+margin-bottom:50px;
+}
+
+.button{
+background:#22c55e;
+color:black;
+padding:16px 32px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+font-size:18px;
+transition:0.2s;
+}
+
+.button:hover{
+background:#16a34a;
+transform:translateY(-2px);
+}
+
+.footer{
+margin-top:100px;
+color:#94a3b8;
+font-size:14px;
+}
+
+a{
+color:#22c55e;
+text-decoration:none;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+</style>
 
 </head>
 
 <body>
 
-<div class="grid-bg"></div>
+<div class="hero">
 
-<nav class="navbar">
-
-<div class="nav-inner">
-
-<div class="nav-left">
-
-<div class="nav-logo">
-Draft.Send.Sign
-</div>
-
-<div class="nav-links">
-
-<a href="/">Home</a>
-<a href="crawfish-boil.html">Crawfish Boil</a>
-<a href="https://ndaexpress.com" target="_blank">NDA Express</a>
-
-</div>
-
-</div>
-
-<div class="nav-icon">
-<img src="assets/logo.png">
-</div>
-
-</div>
-
-</nav>
-
-<section class="hero">
-
-<img src="assets/banner.png" class="banner">
+<img src="assets/DSSLogo.png" class="logo">
 
 <h1>Draft. Send. Sign.</h1>
 
-<p class="subtitle">
-Draft agreements. Send documents. Collect signatures.
+<p class="tagline">
+Create and sign legally binding agreements in minutes.
 </p>
 
-<p class="description">
-A faster way for founders, students, and startups to protect ideas and close deals.
+<p class="coming">
+🚀 Coming Soon
 </p>
 
-<div class="buttons">
-
-<a class="primary" href="crawfish-boil.html">
+<a href="/crawfish-boil" class="button">
 Crawfish Boil Event
 </a>
 
-<a class="secondary" href="https://ndaexpress.com" target="_blank">
-Visit NDA Express
-</a>
+<div class="footer">
+
+<p>
+Powered by
+<a href="https://ndaexpress.com">NDAExpress</a>
+</p>
 
 </div>
 
-<div class="coming">
-COMING SOON
 </div>
-
-</section>
-
-<section class="features">
-
-<div class="feature">
-<h3>⚡ Fast</h3>
-<p>Create and send agreements in minutes.</p>
-</div>
-
-<div class="feature">
-<h3>🔒 Secure</h3>
-<p>Built around privacy and document security.</p>
-</div>
-
-<div class="feature">
-<h3>✍️ Simple</h3>
-<p>A cleaner signature workflow for founders and teams.</p>
-</div>
-
-</section>
-
-<footer>
-
-<img src="assets/DSSLogo.png" class="footer-logo">
-
-<p>Draft.Send.Sign</p>
-
-</footer>
-
-<a href="https://buy.stripe.com/4gMaEXbsf7zy0WQeNv2go01" class="sticky-cta" target="_blank">
-🎟 Reserve Crawfish Boil Spot
-</a>
 
 </body>
 </html>
