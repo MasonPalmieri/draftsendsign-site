@@ -1,90 +1,163 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
-<title>Draft Send Sign</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="stylesheet" href="styles.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DraftSendSign — Document Signing, Simplified</title>
+  <meta name="description" content="Create, send, and collect legally binding signatures in minutes. DraftSendSign makes document workflows simple.">
+  <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-
-<nav>
-
-<div class="nav-left">
-<img src="assets/icon.png" class="nav-icon">
-</div>
-
-<div class="nav-links">
-<a href="/">Home</a>
-<a href="/crawfish-boil">Crawfish Boil</a>
-<a href="https://ndaexpress.com">NDAExpress</a>
-</div>
-
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <img src="assets/dss-wordmark.jpg" alt="DraftSendSign" class="nav-wordmark">
+    </a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="https://app.draftsendsign.com" class="btn-nav">Sign In</a>
+    </div>
+  </div>
 </nav>
 
-
-<section class="banner">
-
-<div class="banner-glow"></div>
-
-<img src="assets/banner.png" class="banner-image">
-
-</section>
-
-
-
+<!-- HERO -->
 <section class="hero">
-
-<h1>Draft. Send. Sign.</h1>
-
-<p class="tagline">
-Create and sign legally binding agreements in minutes.
-</p>
-
-<p class="coming">
-🚀 Coming Soon
-</p>
-
-<a href="/crawfish-boil" class="button animated">
-View Crawfish Boil Event
-</a>
-
-
-<div class="waitlist">
-
-<h3>Join the Waitlist</h3>
-
-<form action="https://formsubmit.co/mason@palmweb.net" method="POST">
-
-<input type="email" name="email" placeholder="Enter your email" required>
-
-<button type="submit">Notify Me</button>
-
-<input type="hidden" name="_captcha" value="false">
-
-</form>
-
-</div>
-
+  <div class="hero-inner">
+    <div class="hero-badge">Now in Beta</div>
+    <h1>Document signing,<br><span class="accent">simplified.</span></h1>
+    <p class="hero-sub">
+      Draft agreements, collect legally binding signatures, and manage your entire document workflow — all in one place.
+    </p>
+    <div class="hero-cta">
+      <a href="https://app.draftsendsign.com" class="btn-primary">Try the Demo</a>
+      <a href="#how-it-works" class="btn-ghost">See how it works</a>
+    </div>
+  </div>
+  <div class="hero-glow"></div>
 </section>
 
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="section-inner">
+    <p class="section-label">What it does</p>
+    <h2>Everything you need to close documents faster</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" fill="#c8210d" opacity=".9"/><path d="M14 2v6h6" fill="#c8210d" opacity=".5"/></svg>
+        </div>
+        <h3>Draft</h3>
+        <p>Upload any document and prepare it for signing in seconds. Add signature blocks, date fields, initials, and more with a simple click-to-place editor.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13" stroke="#c8210d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 2L15 22 11 13 2 9l20-7z" stroke="#c8210d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Send</h3>
+        <p>Invite signers by email with a single click. Each recipient gets a unique, secure link — no account required on their end.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 11l3 3L22 4" stroke="#c8210d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke="#c8210d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Sign</h3>
+        <p>Signers complete their fields and submit from any device. Every action is timestamped and logged for a complete audit trail.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="#c8210d" stroke-width="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="#c8210d" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Mass Signature</h3>
+        <p>Collect signatures at scale with a shareable QR code link. Perfect for events, onboarding, or any situation with multiple signers.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#c8210d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Audit Trail</h3>
+        <p>Every view, click, and signature is recorded with a timestamp and IP address. Full visibility into the life of every document.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#c8210d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke="#c8210d" stroke-width="2"/><path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="#c8210d" stroke-width="2" stroke-linecap="round"/><path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="#c8210d" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Team Management</h3>
+        <p>Invite teammates, assign roles, and manage documents collaboratively. Built for teams of any size.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<footer>
+<!-- HOW IT WORKS -->
+<section class="how" id="how-it-works">
+  <div class="section-inner">
+    <p class="section-label">Simple by design</p>
+    <h2>From draft to signed in minutes</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h3>Upload your document</h3>
+          <p>Start with any PDF or choose from a built-in template. NDAs, employment agreements, vendor contracts — all ready to go.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h3>Place your fields</h3>
+          <p>Click anywhere on the document to drop signature blocks, date fields, checkboxes, and more. Assign each field to the right signer.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h3>Send & track</h3>
+          <p>Email your signers with one click. Watch the status update in real time as they view and sign. Get notified the moment it's complete.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <h3>Download the completed document</h3>
+          <p>Once all parties have signed, download the completed PDF with a full certificate of completion attached.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<p>
-Powered by <a href="https://ndaexpress.com">NDAExpress</a>
-</p>
+<!-- CTA / WAITLIST -->
+<section class="waitlist-section" id="waitlist">
+  <div class="section-inner waitlist-inner">
+    <h2>Be the first to know when we launch</h2>
+    <p>We're currently in private beta. Drop your email and we'll reach out when access opens up.</p>
+    <form class="waitlist-form" action="https://formsubmit.co/mason@palmweb.net" method="POST">
+      <input type="email" name="email" placeholder="your@email.com" required>
+      <button type="submit">Join Waitlist</button>
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New DraftSendSign Waitlist Signup">
+    </form>
+    <p class="waitlist-note">Already have access? <a href="https://app.draftsendsign.com">Sign in here →</a></p>
+  </div>
+</section>
 
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <img src="assets/dss-wordmark.jpg" alt="DraftSendSign" class="footer-logo">
+    <div class="footer-links">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="https://app.draftsendsign.com">App</a>
+      <a href="/crawfish-boil">Crawfish Boil 🦞</a>
+    </div>
+    <p class="footer-copy">© 2026 DraftSendSign. All rights reserved.</p>
+  </div>
 </footer>
 
 </body>
-
 </html>
