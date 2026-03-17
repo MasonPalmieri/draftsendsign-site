@@ -1,0 +1,109 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #0a0a0a;
+  color: #f0f0f0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: rgba(10,10,10,0.9);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-icon { height: 36px; width: auto; }
+.nav-links { display: flex; gap: 24px; }
+.nav-links a { color: #aaa; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover { color: #fff; }
+
+.hero {
+  text-align: center;
+  padding: 80px 24px 60px;
+}
+.event-title {
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.event-subtitle {
+  font-size: 18px;
+  color: #aaa;
+  margin-bottom: 32px;
+}
+.event-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 36px;
+}
+.event-info p { font-size: 16px; color: #ccc; }
+
+.button {
+  display: inline-block;
+  background: #e8420d;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  margin-bottom: 20px;
+}
+.button:hover { background: #c8340a; transform: translateY(-1px); }
+.animated { animation: pulse 2.5s infinite; }
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(232,66,13,0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(232,66,13,0); }
+}
+
+.ticket-note { font-size: 13px; color: #777; margin-top: 8px; }
+
+.features {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 60px 24px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.feature-card {
+  background: #161616;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 28px 24px;
+  max-width: 280px;
+  flex: 1;
+  min-width: 200px;
+}
+.feature-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.feature-card p { font-size: 14px; color: #888; line-height: 1.6; }
+
+.image-section {
+  padding: 0 24px 60px;
+  display: flex;
+  justify-content: center;
+}
+.event-photo {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+footer {
+  text-align: center;
+  padding: 32px 24px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-size: 13px;
+  color: #555;
+}
+footer a { color: #777; text-decoration: none; }
+footer a:hover { color: #aaa; }
