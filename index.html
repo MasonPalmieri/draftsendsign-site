@@ -3,10 +3,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DraftSendSign — Document Signing, Simplified</title>
-  <meta name="description" content="Create, send, and collect legally binding signatures in minutes. DraftSendSign makes document workflows simple.">
+  <title>DraftSendSign — The Affordable DocuSign Alternative for Small Teams</title>
+  <meta name="description" content="Send, sign, and manage legally binding documents in minutes. DraftSendSign is 3x cheaper than DocuSign with no per-document fees. 14-day free trial.">
+  <meta property="og:title" content="DraftSendSign — Affordable eSignatures for Small Teams">
+  <meta property="og:description" content="Send documents for signature in minutes. Legally binding. No per-document fees. 3x cheaper than DocuSign.">
+  <meta property="og:url" content="https://draftsendsign.com">
   <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── Additional styles for new sections ── */
+    .badge-beta { display:inline-flex;align-items:center;gap:6px;background:rgba(200,33,13,.12);border:1px solid rgba(200,33,13,.3);color:#e84c35;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:24px; }
+    .badge-beta .dot { width:6px;height:6px;border-radius:50%;background:#c8210d;animation:pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1}50%{opacity:.4} }
+
+    .hero-visual { margin-top:56px;display:flex;justify-content:center; }
+    .app-mockup { background:#13181f;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:20px;width:100%;max-width:680px;box-shadow:0 32px 80px rgba(0,0,0,.5); }
+    .mockup-bar { display:flex;align-items:center;gap:6px;margin-bottom:16px; }
+    .mockup-bar span { width:10px;height:10px;border-radius:50%; }
+    .mockup-bar .r{background:#ff5f57}.mockup-bar .y{background:#febc2e}.mockup-bar .g{background:#28c840}
+    .mockup-body { display:grid;grid-template-columns:180px 1fr;gap:12px; }
+    .mockup-sidebar { background:#0d1117;border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:8px; }
+    .mockup-nav-item { display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:6px;font-size:11px;color:rgba(255,255,255,.5); }
+    .mockup-nav-item.active { background:rgba(200,33,13,.15);color:#e84c35; }
+    .mockup-nav-dot { width:7px;height:7px;border-radius:50%;background:currentColor;opacity:.6; }
+    .mockup-main { display:flex;flex-direction:column;gap:10px; }
+    .mockup-topbar { background:#1a2030;border-radius:6px;height:32px;display:flex;align-items:center;padding:0 12px;gap:8px; }
+    .mockup-topbar-text { font-size:11px;color:rgba(255,255,255,.4);flex:1; }
+    .mockup-btn { background:#c8210d;color:#fff;font-size:10px;font-weight:600;padding:4px 10px;border-radius:4px;white-space:nowrap; }
+    .mockup-doc { background:#1a2030;border-radius:6px;padding:14px;flex:1; }
+    .mockup-doc-line { height:7px;background:rgba(255,255,255,.07);border-radius:4px;margin-bottom:7px; }
+    .mockup-doc-line.wide{width:90%}.mockup-doc-line.med{width:70%}.mockup-doc-line.short{width:50%}
+    .mockup-sig-field { margin-top:12px;border:2px dashed #c8210d;border-radius:6px;padding:8px 12px;display:flex;align-items:center;gap:8px; }
+    .mockup-sig-field svg { flex-shrink:0; }
+    .mockup-sig-label { font-size:10px;color:#c8210d;font-weight:600; }
+    .mockup-stats { display:grid;grid-template-columns:repeat(3,1fr);gap:8px; }
+    .mockup-stat { background:#1a2030;border-radius:6px;padding:10px;text-align:center; }
+    .mockup-stat-val { font-size:16px;font-weight:700;color:#fff; }
+    .mockup-stat-label { font-size:9px;color:rgba(255,255,255,.35);margin-top:2px; }
+
+    /* Pricing */
+    .pricing { padding:96px 0;background:#060910; }
+    .pricing-toggle { display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:48px; }
+    .pricing-toggle label { font-size:14px;color:rgba(255,255,255,.6);cursor:pointer; }
+    .toggle-switch { position:relative;width:44px;height:24px; }
+    .toggle-switch input { opacity:0;width:0;height:0; }
+    .toggle-slider { position:absolute;inset:0;background:rgba(255,255,255,.1);border-radius:12px;cursor:pointer;transition:.3s; }
+    .toggle-slider:before { content:"";position:absolute;width:18px;height:18px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.3s; }
+    input:checked + .toggle-slider { background:#c8210d; }
+    input:checked + .toggle-slider:before { transform:translateX(20px); }
+    .save-badge { background:rgba(200,33,13,.15);color:#e84c35;font-size:11px;font-weight:700;padding:3px 8px;border-radius:999px; }
+    .pricing-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:20px; }
+    .pricing-card { background:#0d1117;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:28px 24px;position:relative;transition:border-color .2s; }
+    .pricing-card:hover { border-color:rgba(200,33,13,.3); }
+    .pricing-card.featured { border-color:rgba(200,33,13,.5);background:#120e0e; }
+    .pricing-popular { position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#c8210d;color:#fff;font-size:11px;font-weight:700;padding:4px 14px;border-radius:999px;white-space:nowrap; }
+    .pricing-plan { font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.5);margin-bottom:12px; }
+    .pricing-price { margin-bottom:4px; }
+    .pricing-price .amount { font-size:40px;font-weight:800;color:#fff; }
+    .pricing-price .period { font-size:14px;color:rgba(255,255,255,.4); }
+    .pricing-price .annual-note { display:none;font-size:11px;color:rgba(255,255,255,.35);margin-top:2px; }
+    .pricing-desc { font-size:13px;color:rgba(255,255,255,.45);margin-bottom:20px;min-height:36px; }
+    .pricing-divider { border:none;border-top:1px solid rgba(255,255,255,.06);margin:20px 0; }
+    .pricing-features { list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:10px; }
+    .pricing-features li { display:flex;align-items:flex-start;gap:8px;font-size:13px;color:rgba(255,255,255,.65); }
+    .pricing-features li .check { color:#c8210d;flex-shrink:0;margin-top:1px; }
+    .pricing-cta { display:block;text-align:center;padding:11px 0;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;transition:.2s; }
+    .pricing-cta.primary { background:#c8210d;color:#fff; }
+    .pricing-cta.primary:hover { background:#a61b0b; }
+    .pricing-cta.ghost { border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7); }
+    .pricing-cta.ghost:hover { border-color:rgba(255,255,255,.3);color:#fff; }
+
+    /* Comparison */
+    .comparison { padding:80px 0;background:#0a0d14; }
+    .comparison-table { width:100%;border-collapse:collapse;margin-top:48px; }
+    .comparison-table th { padding:14px 20px;font-size:13px;font-weight:700;text-align:left;border-bottom:1px solid rgba(255,255,255,.08); }
+    .comparison-table th.dss { color:#c8210d; }
+    .comparison-table th.competitor { color:rgba(255,255,255,.4); }
+    .comparison-table td { padding:14px 20px;font-size:13px;color:rgba(255,255,255,.65);border-bottom:1px solid rgba(255,255,255,.05); }
+    .comparison-table tr:hover td { background:rgba(255,255,255,.02); }
+    .comparison-table td.feature { color:rgba(255,255,255,.5);font-weight:500; }
+    .check-yes { color:#22c55e;font-weight:700; }
+    .check-no { color:rgba(255,255,255,.25); }
+
+    /* Testimonials placeholder */
+    .social-proof { padding:64px 0;background:#060910;text-align:center; }
+    .social-proof p { font-size:13px;color:rgba(255,255,255,.3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:24px; }
+    .use-cases { display:flex;flex-wrap:wrap;justify-content:center;gap:10px; }
+    .use-case { background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:999px;padding:8px 18px;font-size:13px;color:rgba(255,255,255,.5); }
+
+    /* Early access */
+    .early-access { padding:96px 0;background:linear-gradient(135deg,#0d1117 0%,#160a0a 100%); }
+    .early-access-inner { max-width:560px;margin:0 auto;text-align:center; }
+    .early-access h2 { font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:16px; }
+    .early-access p { color:rgba(255,255,255,.55);font-size:16px;line-height:1.7;margin-bottom:36px; }
+    .access-form { display:flex;flex-direction:column;gap:12px; }
+    .access-form input[type=text],
+    .access-form input[type=email] { background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:13px 16px;font-size:14px;color:#fff;outline:none;transition:border-color .2s; }
+    .access-form input:focus { border-color:rgba(200,33,13,.5); }
+    .access-form input::placeholder { color:rgba(255,255,255,.3); }
+    .access-form button { background:#c8210d;color:#fff;border:none;border-radius:8px;padding:14px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s; }
+    .access-form button:hover { background:#a61b0b; }
+    .access-note { margin-top:16px;font-size:13px;color:rgba(255,255,255,.35); }
+    .access-note a { color:rgba(200,33,13,.8);text-decoration:none; }
+    .access-note a:hover { text-decoration:underline; }
+
+    /* Responsive */
+    @media(max-width:900px){
+      .pricing-grid { grid-template-columns:repeat(2,1fr); }
+      .mockup-body { grid-template-columns:1fr; }
+      .mockup-sidebar { display:none; }
+    }
+    @media(max-width:600px){
+      .pricing-grid { grid-template-columns:1fr; }
+      .comparison-table th.competitor,.comparison-table td:nth-child(3) { display:none; }
+    }
+
+    /* Annual pricing toggle */
+    .price-monthly { display:block; }
+    .price-annual { display:none; }
+    body.annual .price-monthly { display:none; }
+    body.annual .price-annual { display:block; }
+    body.annual .pricing-price .annual-note { display:block; }
+  </style>
 </head>
 <body>
 
@@ -14,11 +132,12 @@
 <nav class="nav">
   <div class="nav-inner">
     <a href="/" class="nav-brand">
-      <img src="assets/dss-icon.jpg" alt="DraftSendSign" class="nav-wordmark">
+      <img src="assets/dss-wordmark.jpg" alt="DraftSendSign" class="nav-wordmark" style="height:28px;width:auto;">
     </a>
     <div class="nav-links">
       <a href="#features">Features</a>
       <a href="#how-it-works">How It Works</a>
+      <a href="#pricing">Pricing</a>
       <a href="https://app.draftsendsign.com" class="btn-nav">Sign In</a>
     </div>
   </div>
@@ -26,18 +145,78 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-inner">
-    <div class="hero-badge">Now in Beta</div>
-    <h1>Document signing,<br><span class="accent">simplified.</span></h1>
-    <p class="hero-sub">
-      Draft agreements, collect legally binding signatures, and manage your entire document workflow — all in one place.
+  <div class="hero-inner" style="max-width:800px;">
+    <div class="badge-beta"><span class="dot"></span>Private Beta — Request Early Access</div>
+    <h1>The affordable alternative<br><span class="accent">to DocuSign.</span></h1>
+    <p class="hero-sub" style="max-width:560px;margin:0 auto;">
+      Send documents for legally binding signature in minutes. No per-document fees. No seat minimums. 3× cheaper than DocuSign — built for small teams.
     </p>
     <div class="hero-cta">
-      <a href="https://app.draftsendsign.com" class="btn-primary">Try the Demo</a>
+      <a href="#early-access" class="btn-primary">Request Early Access</a>
       <a href="#how-it-works" class="btn-ghost">See how it works</a>
+    </div>
+    <p style="font-size:13px;color:rgba(255,255,255,.35);margin-top:16px;">14-day free trial &nbsp;·&nbsp; No credit card required &nbsp;·&nbsp; Cancel anytime</p>
+  </div>
+
+  <!-- App mockup -->
+  <div class="hero-visual">
+    <div class="app-mockup">
+      <div class="mockup-bar">
+        <span class="r"></span><span class="y"></span><span class="g"></span>
+        <span style="margin-left:8px;font-size:11px;color:rgba(255,255,255,.2);">app.draftsendsign.com</span>
+      </div>
+      <div class="mockup-stats" style="margin-bottom:12px;">
+        <div class="mockup-stat"><div class="mockup-stat-val">12</div><div class="mockup-stat-label">Sent</div></div>
+        <div class="mockup-stat"><div class="mockup-stat-val" style="color:#22c55e;">9</div><div class="mockup-stat-label">Completed</div></div>
+        <div class="mockup-stat"><div class="mockup-stat-val" style="color:#f59e0b;">3</div><div class="mockup-stat-label">Pending</div></div>
+      </div>
+      <div class="mockup-body">
+        <div class="mockup-sidebar">
+          <div class="mockup-nav-item active"><span class="mockup-nav-dot"></span>Dashboard</div>
+          <div class="mockup-nav-item"><span class="mockup-nav-dot"></span>Documents</div>
+          <div class="mockup-nav-item"><span class="mockup-nav-dot"></span>Templates</div>
+          <div class="mockup-nav-item"><span class="mockup-nav-dot"></span>Contacts</div>
+          <div class="mockup-nav-item"><span class="mockup-nav-dot"></span>Audit Logs</div>
+        </div>
+        <div class="mockup-main">
+          <div class="mockup-topbar">
+            <span class="mockup-topbar-text">Non-Disclosure Agreement.pdf</span>
+            <span class="mockup-btn">Send for Signature</span>
+          </div>
+          <div class="mockup-doc">
+            <div class="mockup-doc-line wide"></div>
+            <div class="mockup-doc-line med"></div>
+            <div class="mockup-doc-line wide"></div>
+            <div class="mockup-doc-line short"></div>
+            <div class="mockup-doc-line wide"></div>
+            <div class="mockup-doc-line med"></div>
+            <div class="mockup-sig-field">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" stroke="#c8210d" stroke-width="2"/></svg>
+              <span class="mockup-sig-label">Signature — Click to sign</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="hero-glow"></div>
+</section>
+
+<!-- USE CASES -->
+<section class="social-proof">
+  <div class="section-inner">
+    <p>Used for signing</p>
+    <div class="use-cases">
+      <span class="use-case">NDAs</span>
+      <span class="use-case">Employment Contracts</span>
+      <span class="use-case">Vendor Agreements</span>
+      <span class="use-case">Consulting Agreements</span>
+      <span class="use-case">Real Estate Docs</span>
+      <span class="use-case">Partnership Agreements</span>
+      <span class="use-case">Event Waivers</span>
+      <span class="use-case">Offer Letters</span>
+    </div>
+  </div>
 </section>
 
 <!-- FEATURES -->
@@ -50,43 +229,43 @@
         <div class="feature-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" fill="#c8210d" opacity=".9"/><path d="M14 2v6h6" fill="#c8210d" opacity=".5"/></svg>
         </div>
-        <h3>Draft</h3>
-        <p>Upload any document and prepare it for signing in seconds. Add signature blocks, date fields, initials, and more with a simple click-to-place editor.</p>
+        <h3>Upload & Tag</h3>
+        <p>Upload any PDF and click to place signature blocks, date fields, initials, checkboxes, and more. Assign each field to a specific signer in seconds.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13" stroke="#c8210d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 2L15 22 11 13 2 9l20-7z" stroke="#c8210d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <h3>Send</h3>
-        <p>Invite signers by email with a single click. Each recipient gets a unique, secure link — no account required on their end.</p>
+        <h3>Send in One Click</h3>
+        <p>Invite signers by email instantly. Each recipient gets a unique, secure signing link — no account required on their end.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 11l3 3L22 4" stroke="#c8210d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke="#c8210d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <h3>Sign</h3>
-        <p>Signers complete their fields and submit from any device. Every action is timestamped and logged for a complete audit trail.</p>
+        <h3>Guided Signing</h3>
+        <p>Signers are walked through every field step by step, from any device. Signatures, dates, and initials auto-fill where possible.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="#c8210d" stroke-width="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="#c8210d" stroke-width="2" stroke-linecap="round"/></svg>
         </div>
         <h3>Mass Signature</h3>
-        <p>Collect signatures at scale with a shareable QR code link. Perfect for events, onboarding, or any situation with multiple signers.</p>
+        <p>Collect signatures at scale with a shareable link or QR code. Perfect for events, waivers, and onboarding flows with many signers.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#c8210d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <h3>Audit Trail</h3>
-        <p>Every view, click, and signature is recorded with a timestamp and IP address. Full visibility into the life of every document.</p>
+        <p>Every view, click, and signature is recorded with a timestamp and IP address. Legally compliant under the ESIGN Act and eIDAS.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#c8210d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke="#c8210d" stroke-width="2"/><path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="#c8210d" stroke-width="2" stroke-linecap="round"/><path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="#c8210d" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="#c8210d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="7 10 12 15 17 10" stroke="#c8210d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="15" x2="12" y2="3" stroke="#c8210d" stroke-width="2" stroke-linecap="round"/></svg>
         </div>
-        <h3>Team Management</h3>
-        <p>Invite teammates, assign roles, and manage documents collaboratively. Built for teams of any size.</p>
+        <h3>Signed PDF Download</h3>
+        <p>Download the completed document as a PDF with all signatures embedded and a full certificate of completion attached.</p>
       </div>
     </div>
   </div>
@@ -108,40 +287,207 @@
       <div class="step">
         <div class="step-num">02</div>
         <div class="step-content">
-          <h3>Place your fields</h3>
-          <p>Click anywhere on the document to drop signature blocks, date fields, checkboxes, and more. Assign each field to the right signer.</p>
+          <h3>Add recipients & place fields</h3>
+          <p>Add your signers, then click anywhere on the document to drop signature blocks, date fields, initials, and more. Assign each field to the right person.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">03</div>
         <div class="step-content">
-          <h3>Send & track</h3>
-          <p>Email your signers with one click. Watch the status update in real time as they view and sign. Get notified the moment it's complete.</p>
+          <h3>Send & track in real time</h3>
+          <p>Email your signers with one click. Watch the status update as they view and sign. Get notified the moment it's complete. Auto-reminders keep things moving.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">04</div>
         <div class="step-content">
-          <h3>Download the completed document</h3>
-          <p>Once all parties have signed, download the completed PDF with a full certificate of completion attached.</p>
+          <h3>Download the signed document</h3>
+          <p>Once all parties have signed, download the completed PDF with signatures embedded and a full certificate of completion — legally admissible evidence.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA / WAITLIST -->
-<section class="waitlist-section" id="waitlist">
-  <div class="section-inner waitlist-inner">
-    <h2>Be the first to know when we launch</h2>
-    <p>We're currently in private beta. Drop your email and we'll reach out when access opens up.</p>
-    <form class="waitlist-form" action="https://formsubmit.co/mason@palmweb.net" method="POST">
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="section-inner">
+    <p class="section-label">Pricing</p>
+    <h2>Simple, transparent pricing</h2>
+    <p style="color:rgba(255,255,255,.5);margin-bottom:0;font-size:16px;">3× cheaper than DocuSign. No per-document fees.</p>
+
+    <div class="pricing-toggle">
+      <label for="billing-toggle">Monthly</label>
+      <label class="toggle-switch">
+        <input type="checkbox" id="billing-toggle">
+        <span class="toggle-slider"></span>
+      </label>
+      <label for="billing-toggle">Annual <span class="save-badge">Save 20%</span></label>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- Starter -->
+      <div class="pricing-card">
+        <div class="pricing-plan">Starter</div>
+        <div class="pricing-price">
+          <span class="amount">$0</span>
+          <span class="period">/mo</span>
+        </div>
+        <div class="pricing-desc">For individuals with occasional signing needs.</div>
+        <hr class="pricing-divider">
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> 3 documents per month</li>
+          <li><span class="check">✓</span> 1 user</li>
+          <li><span class="check">✓</span> Basic field types</li>
+          <li><span class="check">✓</span> Email notifications</li>
+          <li><span class="check">✓</span> Audit trail</li>
+        </ul>
+        <a href="https://app.draftsendsign.com" class="pricing-cta ghost">Get Started Free</a>
+      </div>
+
+      <!-- Pro -->
+      <div class="pricing-card featured">
+        <div class="pricing-popular">Most Popular</div>
+        <div class="pricing-plan">Pro</div>
+        <div class="pricing-price">
+          <span class="price-monthly"><span class="amount">$12</span><span class="period">/mo</span></span>
+          <span class="price-annual"><span class="amount">$10</span><span class="period">/mo</span></span>
+          <div class="annual-note">Billed $120/year</div>
+        </div>
+        <div class="pricing-desc">For professionals who send documents regularly.</div>
+        <hr class="pricing-divider">
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Unlimited documents</li>
+          <li><span class="check">✓</span> 1 user</li>
+          <li><span class="check">✓</span> All field types</li>
+          <li><span class="check">✓</span> Templates</li>
+          <li><span class="check">✓</span> Auto-reminders</li>
+          <li><span class="check">✓</span> Signed PDF download</li>
+          <li><span class="check">✓</span> 14-day free trial</li>
+        </ul>
+        <a href="https://app.draftsendsign.com" class="pricing-cta primary">Start Free Trial</a>
+      </div>
+
+      <!-- Team -->
+      <div class="pricing-card">
+        <div class="pricing-plan">Team</div>
+        <div class="pricing-price">
+          <span class="price-monthly"><span class="amount">$29</span><span class="period">/mo</span></span>
+          <span class="price-annual"><span class="amount">$23</span><span class="period">/mo</span></span>
+          <div class="annual-note">Billed $276/year</div>
+        </div>
+        <div class="pricing-desc">For small teams managing multiple signers.</div>
+        <hr class="pricing-divider">
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Unlimited documents</li>
+          <li><span class="check">✓</span> Up to 5 users</li>
+          <li><span class="check">✓</span> Shared contacts</li>
+          <li><span class="check">✓</span> Mass signature campaigns</li>
+          <li><span class="check">✓</span> Team management</li>
+          <li><span class="check">✓</span> Priority support</li>
+          <li><span class="check">✓</span> 14-day free trial</li>
+        </ul>
+        <a href="https://app.draftsendsign.com" class="pricing-cta ghost">Start Free Trial</a>
+      </div>
+
+      <!-- Business -->
+      <div class="pricing-card">
+        <div class="pricing-plan">Business</div>
+        <div class="pricing-price">
+          <span class="price-monthly"><span class="amount">$59</span><span class="period">/mo</span></span>
+          <span class="price-annual"><span class="amount">$47</span><span class="period">/mo</span></span>
+          <div class="annual-note">Billed $564/year</div>
+        </div>
+        <div class="pricing-desc">For growing businesses with high-volume needs.</div>
+        <hr class="pricing-divider">
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Unlimited documents</li>
+          <li><span class="check">✓</span> Up to 15 users</li>
+          <li><span class="check">✓</span> API access</li>
+          <li><span class="check">✓</span> Custom branding</li>
+          <li><span class="check">✓</span> Advanced audit logs</li>
+          <li><span class="check">✓</span> Dedicated support</li>
+          <li><span class="check">✓</span> 14-day free trial</li>
+        </ul>
+        <a href="https://app.draftsendsign.com" class="pricing-cta ghost">Start Free Trial</a>
+      </div>
+    </div>
+
+    <p style="text-align:center;margin-top:28px;font-size:13px;color:rgba(255,255,255,.3);">
+      Need more? <a href="mailto:help@draftsendsign.com" style="color:rgba(200,33,13,.8);text-decoration:none;">Contact us</a> for Enterprise pricing.
+    </p>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="comparison" id="comparison">
+  <div class="section-inner">
+    <p class="section-label">Why switch</p>
+    <h2>DraftSendSign vs DocuSign</h2>
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th style="width:35%"></th>
+          <th class="dss">DraftSendSign</th>
+          <th class="competitor">DocuSign</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="feature">Starting price</td>
+          <td><span class="check-yes">Free</span></td>
+          <td><span style="color:rgba(255,255,255,.5);">$15/mo (5 docs only)</span></td>
+        </tr>
+        <tr>
+          <td class="feature">Unlimited documents</td>
+          <td><span class="check-yes">✓ Pro plan ($12/mo)</span></td>
+          <td><span class="check-no">✗ $45/mo/user</span></td>
+        </tr>
+        <tr>
+          <td class="feature">Free trial</td>
+          <td><span class="check-yes">✓ 14 days, no card</span></td>
+          <td><span style="color:rgba(255,255,255,.5);">30 days</span></td>
+        </tr>
+        <tr>
+          <td class="feature">Mass signature (QR/link)</td>
+          <td><span class="check-yes">✓ Included</span></td>
+          <td><span class="check-no">✗ Add-on only</span></td>
+        </tr>
+        <tr>
+          <td class="feature">Audit trail</td>
+          <td><span class="check-yes">✓ All plans</span></td>
+          <td><span style="color:rgba(255,255,255,.5);">✓ All plans</span></td>
+        </tr>
+        <tr>
+          <td class="feature">ESIGN Act compliant</td>
+          <td><span class="check-yes">✓</span></td>
+          <td><span style="color:rgba(255,255,255,.5);">✓</span></td>
+        </tr>
+        <tr>
+          <td class="feature">Per-document fees</td>
+          <td><span class="check-yes">✗ Never</span></td>
+          <td><span class="check-no">✓ On lower plans</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- EARLY ACCESS -->
+<section class="early-access" id="early-access">
+  <div class="early-access-inner">
+    <div class="badge-beta" style="margin-bottom:20px;display:inline-flex;"><span class="dot"></span>Private Beta</div>
+    <h2>Request early access</h2>
+    <p>DraftSendSign is currently in private beta. Drop your name and email and we'll reach out when your spot is ready.</p>
+    <form class="access-form" action="https://formsubmit.co/mason@palmweb.net" method="POST">
+      <input type="text" name="name" placeholder="Your name" required>
       <input type="email" name="email" placeholder="your@email.com" required>
-      <button type="submit">Join Waitlist</button>
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_subject" value="New DraftSendSign Waitlist Signup">
+      <input type="hidden" name="_subject" value="DraftSendSign Early Access Request">
+      <input type="hidden" name="_next" value="https://draftsendsign.com?requested=true">
+      <button type="submit">Request Early Access</button>
     </form>
-    <p class="waitlist-note">Already have access? <a href="https://app.draftsendsign.com">Sign in here →</a></p>
+    <p class="access-note">Already have an account? <a href="https://app.draftsendsign.com">Sign in here →</a></p>
   </div>
 </section>
 
@@ -152,12 +498,22 @@
     <div class="footer-links">
       <a href="#features">Features</a>
       <a href="#how-it-works">How It Works</a>
-      <a href="https://app.draftsendsign.com">App</a>
-      <a href="/crawfish-boil">Crawfish Boil 🦞</a>
+      <a href="#pricing">Pricing</a>
+      <a href="https://app.draftsendsign.com">Sign In</a>
+      <a href="https://app.draftsendsign.com/#/terms">Terms</a>
+      <a href="https://app.draftsendsign.com/#/privacy">Privacy</a>
     </div>
-    <p class="footer-copy">© 2026 DraftSendSign. All rights reserved.</p>
+    <p class="footer-copy">© 2026 DraftSendSign. All rights reserved. &nbsp;·&nbsp; Built for small teams. Priced for real businesses.</p>
   </div>
 </footer>
+
+<script>
+  // Annual/monthly pricing toggle
+  const toggle = document.getElementById('billing-toggle');
+  toggle.addEventListener('change', () => {
+    document.body.classList.toggle('annual', toggle.checked);
+  });
+</script>
 
 </body>
 </html>
