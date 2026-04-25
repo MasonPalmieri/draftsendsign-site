@@ -3,127 +3,142 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DraftSendSign — Document Signing for Small Teams</title>
-  <meta name="description" content="Send, sign, and manage legally binding documents in minutes. Send, sign, and manage legally binding documents in minutes. No per-document fees. 14-day free trial.">
-  <meta property="og:title" content="DraftSendSign — Affordable eSignatures for Small Teams">
-  <meta property="og:description" content="Send documents for legally binding signature in minutes. No per-document fees. No seat minimums.">
+  <title>DraftSendSign — eSignature Software for Small Teams</title>
+  <meta name="description" content="Send documents for legally binding signature in minutes. No per-document fees, no seat minimums. Unlimited e-signatures from $4.99/month.">
+  <meta name="keywords" content="electronic signature, esignature, document signing, e-sign, digital signature, small business">
+  <meta property="og:title" content="DraftSendSign — eSignatures Built for Small Teams">
+  <meta property="og:description" content="Send, sign, and manage legally binding documents in minutes. No per-document fees. No seat minimums.">
   <meta property="og:url" content="https://draftsendsign.com">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://draftsendsign.com">
   <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* ── Additional styles for new sections ── */
-    .badge-beta { display:inline-flex;align-items:center;gap:6px;background:rgba(200,33,13,.12);border:1px solid rgba(200,33,13,.3);color:#e84c35;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:24px; }
-    .badge-beta .dot { width:6px;height:6px;border-radius:50%;background:#c8210d;animation:pulse 2s infinite; }
-    @keyframes pulse { 0%,100%{opacity:1}50%{opacity:.4} }
+    /* ── Design tokens ── */
+    :root {
+      --red: #c8210d;
+      --red-light: #e84c35;
+      --red-dim: rgba(200,33,13,.12);
+      --red-border: rgba(200,33,13,.25);
+      --navy: #0d1117;
+      --bg: #060910;
+      --bg2: #080b12;
+      --bg3: #0a0d14;
+      --surface: rgba(255,255,255,.04);
+      --border: rgba(255,255,255,.07);
+      --text: rgba(255,255,255,.9);
+      --text-muted: rgba(255,255,255,.55);
+      --text-faint: rgba(255,255,255,.35);
+    }
 
+    /* ── App mockup ── */
     .hero-visual { margin-top:56px;display:flex;justify-content:center; }
     .app-mockup { background:#13181f;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:20px;width:100%;max-width:680px;box-shadow:0 32px 80px rgba(0,0,0,.5); }
     .mockup-bar { display:flex;align-items:center;gap:6px;margin-bottom:16px; }
     .mockup-bar span { width:10px;height:10px;border-radius:50%; }
     .mockup-bar .r{background:#ff5f57}.mockup-bar .y{background:#febc2e}.mockup-bar .g{background:#28c840}
     .mockup-body { display:grid;grid-template-columns:180px 1fr;gap:12px; }
-    .mockup-sidebar { background:#0d1117;border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:8px; }
+    .mockup-sidebar { background:var(--navy);border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:8px; }
     .mockup-nav-item { display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:6px;font-size:11px;color:rgba(255,255,255,.5); }
-    .mockup-nav-item.active { background:rgba(200,33,13,.15);color:#e84c35; }
+    .mockup-nav-item.active { background:rgba(200,33,13,.15);color:var(--red-light); }
     .mockup-nav-dot { width:7px;height:7px;border-radius:50%;background:currentColor;opacity:.6; }
     .mockup-main { display:flex;flex-direction:column;gap:10px; }
     .mockup-topbar { background:#1a2030;border-radius:6px;height:32px;display:flex;align-items:center;padding:0 12px;gap:8px; }
     .mockup-topbar-text { font-size:11px;color:rgba(255,255,255,.4);flex:1; }
-    .mockup-btn { background:#c8210d;color:#fff;font-size:10px;font-weight:600;padding:4px 10px;border-radius:4px;white-space:nowrap; }
+    .mockup-btn { background:var(--red);color:#fff;font-size:10px;font-weight:600;padding:4px 10px;border-radius:4px;white-space:nowrap; }
     .mockup-doc { background:#1a2030;border-radius:6px;padding:14px;flex:1; }
     .mockup-doc-line { height:7px;background:rgba(255,255,255,.07);border-radius:4px;margin-bottom:7px; }
     .mockup-doc-line.wide{width:90%}.mockup-doc-line.med{width:70%}.mockup-doc-line.short{width:50%}
-    .mockup-sig-field { margin-top:12px;border:2px dashed #c8210d;border-radius:6px;padding:8px 12px;display:flex;align-items:center;gap:8px; }
-    .mockup-sig-field svg { flex-shrink:0; }
-    .mockup-sig-label { font-size:10px;color:#c8210d;font-weight:600; }
+    .mockup-sig-field { margin-top:12px;border:2px dashed var(--red);border-radius:6px;padding:8px 12px;display:flex;align-items:center;gap:8px; }
+    .mockup-sig-label { font-size:10px;color:var(--red);font-weight:600; }
     .mockup-stats { display:grid;grid-template-columns:repeat(3,1fr);gap:8px; }
     .mockup-stat { background:#1a2030;border-radius:6px;padding:10px;text-align:center; }
     .mockup-stat-val { font-size:16px;font-weight:700;color:#fff; }
     .mockup-stat-label { font-size:9px;color:rgba(255,255,255,.35);margin-top:2px; }
 
-    /* Pricing */
-    .pricing { padding:96px 0;background:#060910; }
-    .pricing-toggle { display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:48px; }
-    .pricing-toggle label { font-size:14px;color:rgba(255,255,255,.6);cursor:pointer; }
-    .toggle-switch { position:relative;width:44px;height:24px; }
-    .toggle-switch input { opacity:0;width:0;height:0; }
-    .toggle-slider { position:absolute;inset:0;background:rgba(255,255,255,.1);border-radius:12px;cursor:pointer;transition:.3s; }
-    .toggle-slider:before { content:"";position:absolute;width:18px;height:18px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.3s; }
-    input:checked + .toggle-slider { background:#c8210d; }
-    input:checked + .toggle-slider:before { transform:translateX(20px); }
-    .save-badge { background:rgba(200,33,13,.15);color:#e84c35;font-size:11px;font-weight:700;padding:3px 8px;border-radius:999px; }
-    .pricing-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:20px; }
-    .pricing-card { background:#0d1117;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:28px 24px;position:relative;transition:border-color .2s; }
-    .pricing-card:hover { border-color:rgba(200,33,13,.3); }
+    /* ── Trust bar ── */
+    .trust-bar { padding:28px 0;background:#070a10;border-top:1px solid var(--border);border-bottom:1px solid var(--border); }
+    .trust-bar-inner { display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:32px; }
+    .trust-item { display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-faint);white-space:nowrap; }
+    .trust-item svg { flex-shrink:0;opacity:.6; }
+
+    /* ── Use cases ── */
+    .use-cases-bar { padding:48px 0;background:var(--bg2);border-bottom:1px solid var(--border); }
+    .use-cases-label { font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-faint);text-align:center;margin-bottom:20px; }
+    .use-cases { display:flex;flex-wrap:wrap;justify-content:center;gap:10px; }
+    .use-case { background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 18px;font-size:13px;color:var(--text-muted);transition:border-color .2s,color .2s;cursor:default; }
+    .use-case:hover { border-color:var(--red-border);color:#fff; }
+
+    /* ── Pricing ── */
+    .pricing { padding:96px 0;background:var(--bg); }
+    .pricing-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:760px;margin:0 auto; }
+    .pricing-card { background:var(--navy);border:1px solid var(--border);border-radius:16px;padding:28px 24px;position:relative;transition:border-color .2s; }
+    .pricing-card:hover { border-color:var(--red-border); }
     .pricing-card.featured { border-color:rgba(200,33,13,.5);background:#120e0e; }
-    .pricing-popular { position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#c8210d;color:#fff;font-size:11px;font-weight:700;padding:4px 14px;border-radius:999px;white-space:nowrap; }
-    .pricing-plan { font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.5);margin-bottom:12px; }
-    .pricing-price { margin-bottom:4px; }
-    .pricing-price .amount { font-size:40px;font-weight:800;color:#fff; }
-    .pricing-price .period { font-size:14px;color:rgba(255,255,255,.4); }
-    .pricing-price .annual-note { display:none;font-size:11px;color:rgba(255,255,255,.35);margin-top:2px; }
-    .pricing-desc { font-size:13px;color:rgba(255,255,255,.45);margin-bottom:20px;min-height:36px; }
-    .pricing-divider { border:none;border-top:1px solid rgba(255,255,255,.06);margin:20px 0; }
+    .pricing-popular { position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;font-size:11px;font-weight:700;padding:4px 14px;border-radius:999px;white-space:nowrap; }
+    .pricing-plan { font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-faint);margin-bottom:12px; }
+    .pricing-amount { font-size:40px;font-weight:800;color:#fff; }
+    .pricing-period { font-size:14px;color:var(--text-faint); }
+    .pricing-note { font-size:11px;color:var(--text-faint);margin-top:4px; }
+    .pricing-desc { font-size:13px;color:var(--text-muted);margin:12px 0 20px;min-height:36px; }
+    .pricing-divider { border:none;border-top:1px solid var(--border);margin:20px 0; }
     .pricing-features { list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:10px; }
     .pricing-features li { display:flex;align-items:flex-start;gap:8px;font-size:13px;color:rgba(255,255,255,.65); }
-    .pricing-features li .check { color:#c8210d;flex-shrink:0;margin-top:1px; }
+    .pricing-features li .check { color:var(--red);flex-shrink:0;margin-top:1px; }
     .pricing-cta { display:block;text-align:center;padding:11px 0;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;transition:.2s; }
-    .pricing-cta.primary { background:#c8210d;color:#fff; }
+    .pricing-cta.primary { background:var(--red);color:#fff; }
     .pricing-cta.primary:hover { background:#a61b0b; }
     .pricing-cta.ghost { border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7); }
     .pricing-cta.ghost:hover { border-color:rgba(255,255,255,.3);color:#fff; }
 
-    /* Comparison */
-    .comparison { padding:80px 0;background:#0a0d14; }
+    /* ── FAQ ── */
+    .faq { padding:80px 0;background:var(--bg3); }
+    .faq-list { max-width:680px;margin:48px auto 0;display:flex;flex-direction:column;gap:0; }
+    .faq-item { border-bottom:1px solid var(--border); }
+    .faq-q { width:100%;text-align:left;background:none;border:none;color:#fff;font-size:15px;font-weight:600;padding:20px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:inherit; }
+    .faq-q:hover { color:var(--red-light); }
+    .faq-chevron { flex-shrink:0;transition:transform .25s;color:var(--text-faint); }
+    .faq-item.open .faq-chevron { transform:rotate(180deg); }
+    .faq-a { font-size:14px;color:var(--text-muted);line-height:1.7;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s; }
+    .faq-item.open .faq-a { max-height:300px;padding-bottom:20px; }
+
+    /* ── CTA bottom ── */
+    .cta-bottom { padding:100px 0;background:linear-gradient(135deg,var(--navy) 0%,#160a0a 100%);text-align:center; }
+    .cta-bottom h2 { font-size:clamp(28px,4vw,44px);font-weight:800;margin-bottom:16px; }
+    .cta-bottom p { color:var(--text-muted);font-size:17px;line-height:1.7;margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto; }
+    .cta-buttons { display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap; }
+
+    /* ── Comparison ── */
+    .comparison { padding:80px 0;background:var(--bg2); }
     .comparison-table { width:100%;border-collapse:collapse;margin-top:48px; }
     .comparison-table th { padding:14px 20px;font-size:13px;font-weight:700;text-align:left;border-bottom:1px solid rgba(255,255,255,.08); }
-    .comparison-table th.dss { color:#c8210d; }
-    .comparison-table th.competitor { color:rgba(255,255,255,.4); }
-    .comparison-table td { padding:14px 20px;font-size:13px;color:rgba(255,255,255,.65);border-bottom:1px solid rgba(255,255,255,.05); }
+    .comparison-table th.dss { color:var(--red-light); }
+    .comparison-table th.other { color:var(--text-faint); }
+    .comparison-table td { padding:13px 20px;font-size:13px;color:rgba(255,255,255,.65);border-bottom:1px solid rgba(255,255,255,.04); }
     .comparison-table tr:hover td { background:rgba(255,255,255,.02); }
-    .comparison-table td.feature { color:rgba(255,255,255,.5);font-weight:500; }
+    .comparison-table td.feature { color:var(--text-muted);font-weight:500; }
     .check-yes { color:#22c55e;font-weight:700; }
-    .check-no { color:rgba(255,255,255,.25); }
+    .check-no { color:rgba(255,255,255,.2); }
 
-    /* Testimonials placeholder */
-    .social-proof { padding:64px 0;background:#060910;text-align:center; }
-    .social-proof p { font-size:13px;color:rgba(255,255,255,.3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:24px; }
-    .use-cases { display:flex;flex-wrap:wrap;justify-content:center;gap:10px; }
-    .use-case { background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:999px;padding:8px 18px;font-size:13px;color:rgba(255,255,255,.5); }
+    /* ── Footer ── */
+    .site-footer { background:#040608;padding:40px 0;border-top:1px solid var(--border); }
+    .footer-inner { display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px; }
+    .footer-links { display:flex;gap:24px; }
+    .footer-links a { font-size:13px;color:var(--text-faint);text-decoration:none;transition:color .2s; }
+    .footer-links a:hover { color:#fff; }
 
-    /* Early access */
-    .early-access { padding:96px 0;background:linear-gradient(135deg,#0d1117 0%,#160a0a 100%); }
-    .early-access-inner { max-width:560px;margin:0 auto;text-align:center; }
-    .early-access h2 { font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:16px; }
-    .early-access p { color:rgba(255,255,255,.55);font-size:16px;line-height:1.7;margin-bottom:36px; }
-    .access-form { display:flex;flex-direction:column;gap:12px; }
-    .access-form input[type=text],
-    .access-form input[type=email] { background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:13px 16px;font-size:14px;color:#fff;outline:none;transition:border-color .2s; }
-    .access-form input:focus { border-color:rgba(200,33,13,.5); }
-    .access-form input::placeholder { color:rgba(255,255,255,.3); }
-    .access-form button { background:#c8210d;color:#fff;border:none;border-radius:8px;padding:14px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s; }
-    .access-form button:hover { background:#a61b0b; }
-    .access-note { margin-top:16px;font-size:13px;color:rgba(255,255,255,.35); }
-    .access-note a { color:rgba(200,33,13,.8);text-decoration:none; }
-    .access-note a:hover { text-decoration:underline; }
-
-    /* Responsive */
+    /* ── Responsive ── */
     @media(max-width:900px){
-      .pricing-grid { grid-template-columns:repeat(2,1fr); }
       .mockup-body { grid-template-columns:1fr; }
       .mockup-sidebar { display:none; }
+      .pricing-grid { grid-template-columns:1fr; }
     }
     @media(max-width:600px){
-      .pricing-grid { grid-template-columns:1fr; }
-      .comparison-table th.competitor,.comparison-table td:nth-child(3) { display:none; }
+      .trust-bar-inner { gap:20px; }
+      .comparison-table th:nth-child(3),.comparison-table td:nth-child(3) { display:none; }
+      .footer-inner { flex-direction:column;align-items:flex-start; }
     }
-
-    /* Annual pricing toggle */
-    .price-monthly { display:block; }
-    .price-annual { display:none; }
-    body.annual .price-monthly { display:none; }
-    body.annual .price-annual { display:block; }
-    body.annual .pricing-price .annual-note { display:block; }
   </style>
 </head>
 <body>
@@ -138,6 +153,7 @@
       <a href="#features">Features</a>
       <a href="#how-it-works">How It Works</a>
       <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
       <a href="https://app.draftsendsign.com" class="btn-nav">Sign In</a>
     </div>
   </div>
@@ -145,17 +161,18 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-inner" style="max-width:800px;">
-    <div class="badge-beta"><span class="dot"></span>Private Beta — Request Early Access</div>
-    <h1>The smarter way<br><span class="accent">to get documents signed.</span></h1>
-    <p class="hero-sub" style="max-width:560px;margin:0 auto;">
-      Send documents for legally binding signature in minutes. No per-document fees. No seat minimums. Built for small teams.
+  <div class="hero-inner" style="max-width:820px;">
+    <h1 style="font-size:clamp(36px,5.5vw,64px);line-height:1.1;font-weight:800;margin-bottom:20px;">
+      Get documents signed.<br><span class="accent">Without the complexity.</span>
+    </h1>
+    <p class="hero-sub" style="max-width:540px;margin:0 auto 36px;font-size:18px;line-height:1.65;">
+      Send any PDF for legally binding signature in minutes. Unlimited requests, full audit trail, signed PDF emailed to everyone — starting at $4.99/month.
     </p>
     <div class="hero-cta">
-      <a href="#early-access" class="btn-primary">Request Early Access</a>
+      <a href="https://app.draftsendsign.com" class="btn-primary">Start for Free</a>
       <a href="#how-it-works" class="btn-ghost">See how it works</a>
     </div>
-    <p style="font-size:13px;color:rgba(255,255,255,.35);margin-top:16px;">14-day free trial &nbsp;·&nbsp; No credit card required &nbsp;·&nbsp; Cancel anytime</p>
+    <p style="font-size:13px;color:rgba(255,255,255,.3);margin-top:18px;">No credit card required &nbsp;·&nbsp; No per-document fees &nbsp;·&nbsp; Cancel anytime</p>
   </div>
 
   <!-- App mockup -->
@@ -166,8 +183,8 @@
         <span style="margin-left:8px;font-size:11px;color:rgba(255,255,255,.2);">app.draftsendsign.com</span>
       </div>
       <div class="mockup-stats" style="margin-bottom:12px;">
-        <div class="mockup-stat"><div class="mockup-stat-val">12</div><div class="mockup-stat-label">Sent</div></div>
-        <div class="mockup-stat"><div class="mockup-stat-val" style="color:#22c55e;">9</div><div class="mockup-stat-label">Completed</div></div>
+        <div class="mockup-stat"><div class="mockup-stat-val">24</div><div class="mockup-stat-label">Sent</div></div>
+        <div class="mockup-stat"><div class="mockup-stat-val" style="color:#22c55e;">21</div><div class="mockup-stat-label">Completed</div></div>
         <div class="mockup-stat"><div class="mockup-stat-val" style="color:#f59e0b;">3</div><div class="mockup-stat-label">Pending</div></div>
       </div>
       <div class="mockup-body">
@@ -180,7 +197,7 @@
         </div>
         <div class="mockup-main">
           <div class="mockup-topbar">
-            <span class="mockup-topbar-text">Non-Disclosure Agreement.pdf</span>
+            <span class="mockup-topbar-text">Service Agreement.pdf</span>
             <span class="mockup-btn">Send for Signature</span>
           </div>
           <div class="mockup-doc">
@@ -202,10 +219,36 @@
   <div class="hero-glow"></div>
 </section>
 
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#22c55e" stroke-width="2"/></svg>
+      ESIGN Act compliant
+    </div>
+    <div class="trust-item">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" stroke="#22c55e" stroke-width="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="#22c55e" stroke-width="2"/></svg>
+      256-bit encryption
+    </div>
+    <div class="trust-item">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 11l3 3L22 4" stroke="#22c55e" stroke-width="2" stroke-linecap="round"/></svg>
+      Full audit trail on every document
+    </div>
+    <div class="trust-item">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#22c55e" stroke-width="2"/><path d="M12 6v6l4 2" stroke="#22c55e" stroke-width="2" stroke-linecap="round"/></svg>
+      Signed PDF emailed automatically
+    </div>
+    <div class="trust-item">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="#22c55e" stroke-width="2"/></svg>
+      No account required for signers
+    </div>
+  </div>
+</div>
+
 <!-- USE CASES -->
-<section class="social-proof">
+<div class="use-cases-bar">
   <div class="section-inner">
-    <p>Used for signing</p>
+    <p class="use-cases-label">Used for signing</p>
     <div class="use-cases">
       <span class="use-case">NDAs</span>
       <span class="use-case">Employment Contracts</span>
@@ -215,73 +258,11 @@
       <span class="use-case">Partnership Agreements</span>
       <span class="use-case">Event Waivers</span>
       <span class="use-case">Offer Letters</span>
+      <span class="use-case">Lease Agreements</span>
+      <span class="use-case">Client Contracts</span>
     </div>
   </div>
-</section>
-
-<!-- AI FEATURE HIGHLIGHT -->
-<section style="padding:80px 0;background:#080b12;border-top:1px solid rgba(255,255,255,.05);">
-  <div class="section-inner" style="max-width:900px;">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
-      <div>
-        <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(200,33,13,.12);border:1px solid rgba(200,33,13,.25);color:#e84c35;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:20px;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#e84c35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          NEW — Premium Feature
-        </div>
-        <h2 style="font-size:clamp(26px,3.5vw,38px);font-weight:800;color:#fff;line-height:1.2;margin-bottom:16px;">AI Document Generator</h2>
-        <p style="font-size:16px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:28px;">Don't have a template? Describe your agreement in plain English and our AI drafts a complete, professional legal document in seconds — ready to tag and send.</p>
-        <ul style="list-style:none;padding:0;margin:0 0 32px;display:flex;flex-direction:column;gap:12px;">
-          <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,.7);">
-            <span style="color:#c8210d;font-weight:700;margin-top:1px;">✓</span>
-            Guided prompts cover parties, dates, jurisdiction, and key terms
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,.7);">
-            <span style="color:#c8210d;font-weight:700;margin-top:1px;">✓</span>
-            Generates NDAs, service agreements, waivers, employment contracts, and more
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,.7);">
-            <span style="color:#c8210d;font-weight:700;margin-top:1px;">✓</span>
-            Send for signature immediately or save as a reusable template
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,.7);">
-            <span style="color:#c8210d;font-weight:700;margin-top:1px;">✓</span>
-            Available on Team plan and above
-          </li>
-        </ul>
-        <a href="#early-access" style="display:inline-block;background:#c8210d;color:#fff;font-size:14px;font-weight:700;text-decoration:none;padding:13px 28px;border-radius:8px;">Request Early Access</a>
-      </div>
-      <!-- AI mockup -->
-      <div style="background:#0d1117;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px;box-shadow:0 24px 60px rgba(0,0,0,.4);">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:20px;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#c8210d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span style="font-size:13px;font-weight:700;color:#fff;">AI Generator</span>
-          <span style="margin-left:auto;font-size:10px;background:rgba(200,33,13,.15);color:#e84c35;padding:2px 8px;border-radius:999px;">Team+</span>
-        </div>
-        <div style="margin-bottom:16px;">
-          <div style="font-size:11px;color:rgba(255,255,255,.4);margin-bottom:6px;">Document type</div>
-          <div style="background:rgba(200,33,13,.1);border:1px solid rgba(200,33,13,.3);border-radius:8px;padding:10px 14px;font-size:13px;color:#e84c35;font-weight:600;">Non-Disclosure Agreement</div>
-        </div>
-        <div style="margin-bottom:16px;">
-          <div style="font-size:11px;color:rgba(255,255,255,.4);margin-bottom:6px;">Parties</div>
-          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:10px 14px;font-size:12px;color:rgba(255,255,255,.7);">Acme Corp (Disclosing Party) &amp; John Smith (Receiving Party)</div>
-        </div>
-        <div style="margin-bottom:20px;">
-          <div style="font-size:11px;color:rgba(255,255,255,.4);margin-bottom:6px;">Description</div>
-          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:10px 14px;font-size:12px;color:rgba(255,255,255,.7);line-height:1.5;">Protect proprietary product roadmap shared during partnership discussions. 2-year term, Delaware law...</div>
-        </div>
-        <div style="background:#0a0f18;border-radius:8px;padding:14px;font-size:11px;color:rgba(255,255,255,.35);line-height:1.8;font-family:Georgia,serif;border:1px solid rgba(255,255,255,.06);">
-          <div style="color:rgba(255,255,255,.6);font-weight:700;margin-bottom:6px;font-family:inherit;">NON-DISCLOSURE AGREEMENT</div>
-          This Agreement is entered into as of April 18, 2026 by and between Acme Corp...
-          <div style="margin-top:10px;display:flex;align-items:center;gap:6px;">
-            <div style="height:1px;flex:1;background:rgba(255,255,255,.08);"></div>
-            <span style="color:#22c55e;font-size:10px;">✓ Generated in 3 seconds</span>
-            <div style="height:1px;flex:1;background:rgba(255,255,255,.08);"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+</div>
 
 <!-- FEATURES -->
 <section class="features" id="features">
@@ -294,42 +275,82 @@
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" fill="#c8210d" opacity=".9"/><path d="M14 2v6h6" fill="#c8210d" opacity=".5"/></svg>
         </div>
         <h3>Upload & Tag</h3>
-        <p>Upload any PDF and click to place signature blocks, date fields, initials, checkboxes, and more. Assign each field to a specific signer in seconds.</p>
+        <p>Upload any PDF and click to place signature blocks, date fields, initials, and text fields. Assign each field to a specific signer in seconds.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13" stroke="#c8210d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 2L15 22 11 13 2 9l20-7z" stroke="#c8210d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <h3>Send in One Click</h3>
-        <p>Invite signers by email instantly. Each recipient gets a unique, secure signing link — no account required on their end.</p>
+        <p>Invite signers by email. Each recipient gets a unique secure signing link — no account required on their end.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 11l3 3L22 4" stroke="#c8210d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke="#c8210d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <h3>Guided Signing</h3>
-        <p>Signers are walked through every field step by step, from any device. Signatures, dates, and initials auto-fill where possible.</p>
+        <p>Signers are walked through every field step by step from any device. No confusion, no missed fields.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="#c8210d" stroke-width="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="#c8210d" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="#c8210d" stroke-width="2"/><polyline points="7 10 12 15 17 10" stroke="#c8210d" stroke-width="2"/><line x1="12" y1="15" x2="12" y2="3" stroke="#c8210d" stroke-width="2"/></svg>
         </div>
-        <h3>Mass Signature</h3>
-        <p>Collect signatures at scale with a shareable link or QR code. Perfect for events, waivers, and onboarding flows with many signers.</p>
+        <h3>Executed PDF Emailed</h3>
+        <p>Once everyone signs, all parties automatically receive the completed PDF with signatures embedded and a full signing certificate.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#c8210d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <h3>Audit Trail</h3>
-        <p>Every view, click, and signature is recorded with a timestamp and IP address. Legally compliant under the ESIGN Act and eIDAS.</p>
+        <p>Every view, click, and signature recorded with timestamp and IP address. Legally compliant under the ESIGN Act and eIDAS.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="#c8210d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="7 10 12 15 17 10" stroke="#c8210d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="15" x2="12" y2="3" stroke="#c8210d" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" stroke="#c8210d" stroke-width="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="#c8210d" stroke-width="2" stroke-linecap="round"/></svg>
         </div>
-        <h3>Signed PDF Download</h3>
-        <p>Download the completed document as a PDF with all signatures embedded and a full certificate of completion attached.</p>
+        <h3>Mass Signature</h3>
+        <p>Collect signatures at scale with a shareable link or QR code. Perfect for events, waivers, and large onboarding flows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI FEATURE -->
+<section style="padding:80px 0;background:var(--bg2);border-top:1px solid var(--border);">
+  <div class="section-inner" style="max-width:900px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+      <div>
+        <div style="display:inline-flex;align-items:center;gap:8px;background:var(--red-dim);border:1px solid var(--red-border);color:var(--red-light);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:20px;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Business Feature
+        </div>
+        <h2 style="font-size:clamp(26px,3.5vw,38px);font-weight:800;color:#fff;line-height:1.2;margin-bottom:16px;">AI Document Generator</h2>
+        <p style="font-size:16px;color:var(--text-muted);line-height:1.7;margin-bottom:28px;">Don't have a template? Describe your agreement in plain English and our AI drafts a complete, professional document in seconds — ready to tag and send.</p>
+        <ul style="list-style:none;padding:0;margin:0 0 32px;display:flex;flex-direction:column;gap:12px;">
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,.7);"><span style="color:var(--red);font-weight:700;">✓</span> Guided prompts cover parties, dates, jurisdiction, and key terms</li>
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,.7);"><span style="color:var(--red);font-weight:700;">✓</span> NDAs, service agreements, waivers, employment contracts, and more</li>
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,.7);"><span style="color:var(--red);font-weight:700;">✓</span> Send immediately or save as a reusable template</li>
+        </ul>
+        <a href="https://app.draftsendsign.com" style="display:inline-block;background:var(--red);color:#fff;font-size:14px;font-weight:700;text-decoration:none;padding:13px 28px;border-radius:8px;">Get Started</a>
+      </div>
+      <div style="background:var(--navy);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px;box-shadow:0 24px 60px rgba(0,0,0,.4);">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:20px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#c8210d" stroke-width="2" stroke-linecap="round"/></svg>
+          <span style="font-size:13px;font-weight:700;color:#fff;">AI Generator</span>
+          <span style="margin-left:auto;font-size:10px;background:var(--red-dim);color:var(--red-light);padding:2px 8px;border-radius:999px;">Business</span>
+        </div>
+        <div style="margin-bottom:14px;"><div style="font-size:11px;color:rgba(255,255,255,.4);margin-bottom:6px;">Document type</div><div style="background:rgba(200,33,13,.1);border:1px solid rgba(200,33,13,.3);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--red-light);font-weight:600;">Non-Disclosure Agreement</div></div>
+        <div style="margin-bottom:14px;"><div style="font-size:11px;color:rgba(255,255,255,.4);margin-bottom:6px;">Parties</div><div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:12px;color:rgba(255,255,255,.7);">Acme Corp (Disclosing) &amp; John Smith (Receiving)</div></div>
+        <div style="background:#0a0f18;border-radius:8px;padding:14px;font-size:11px;color:rgba(255,255,255,.35);line-height:1.8;font-family:Georgia,serif;border:1px solid var(--border);">
+          <div style="color:rgba(255,255,255,.6);font-weight:700;margin-bottom:6px;font-family:inherit;">NON-DISCLOSURE AGREEMENT</div>
+          This Agreement is entered into as of April 2026 by and between Acme Corp and John Smith...
+          <div style="margin-top:10px;display:flex;align-items:center;gap:6px;">
+            <div style="height:1px;flex:1;background:rgba(255,255,255,.08);"></div>
+            <span style="color:#22c55e;font-size:10px;">✓ Generated in 3 seconds</span>
+            <div style="height:1px;flex:1;background:rgba(255,255,255,.08);"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -339,37 +360,64 @@
 <section class="how" id="how-it-works">
   <div class="section-inner">
     <p class="section-label">Simple by design</p>
-    <h2>From draft to signed in minutes</h2>
+    <h2>From upload to signed in minutes</h2>
     <div class="steps">
       <div class="step">
         <div class="step-num">01</div>
         <div class="step-content">
           <h3>Upload your document</h3>
-          <p>Start with any PDF or choose from a built-in template. NDAs, employment agreements, vendor contracts — all ready to go.</p>
+          <p>Start with any PDF. NDAs, employment agreements, vendor contracts, leases — if it's a PDF, you can send it.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">02</div>
         <div class="step-content">
           <h3>Add recipients & place fields</h3>
-          <p>Add your signers, then click anywhere on the document to drop signature blocks, date fields, initials, and more. Assign each field to the right person.</p>
+          <p>Add your signers, then click anywhere on the document to drop signature fields, date fields, and initials. Assign each to the right person.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">03</div>
         <div class="step-content">
           <h3>Send & track in real time</h3>
-          <p>Email your signers with one click. Watch the status update as they view and sign. Get notified the moment it's complete. Auto-reminders keep things moving.</p>
+          <p>Email your signers with one click. Track status as they view and sign. Automatic reminders keep things moving without follow-up.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">04</div>
         <div class="step-content">
-          <h3>Download the signed document</h3>
-          <p>Once all parties have signed, download the completed PDF with signatures embedded and a full certificate of completion — legally admissible evidence.</p>
+          <h3>Executed PDF sent to everyone</h3>
+          <p>Once all parties sign, everyone automatically receives the completed PDF with all signatures embedded and a full certificate of completion.</p>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="comparison">
+  <div class="section-inner">
+    <p class="section-label">How we compare</p>
+    <h2>The same signatures, a fraction of the price</h2>
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th style="width:40%;">Feature</th>
+          <th class="dss">DraftSendSign</th>
+          <th class="other">Enterprise Alternatives</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="feature">Starting price</td><td><strong style="color:#22c55e;">$4.99/mo</strong></td><td>$25–$45/mo per user</td></tr>
+        <tr><td class="feature">Per-document fees</td><td><span class="check-yes">✓ None</span></td><td><span class="check-no">$0.25–$1.50 each</span></td></tr>
+        <tr><td class="feature">Seat minimums</td><td><span class="check-yes">✓ None</span></td><td><span class="check-no">Often 5+ seats</span></td></tr>
+        <tr><td class="feature">Audit trail</td><td><span class="check-yes">✓ Full</span></td><td><span class="check-yes">✓ Full</span></td></tr>
+        <tr><td class="feature">Signed PDF emailed to all parties</td><td><span class="check-yes">✓ Automatic</span></td><td>Varies by plan</td></tr>
+        <tr><td class="feature">AI document generation</td><td><span class="check-yes">✓ Built in</span></td><td><span class="check-no">Not available</span></td></tr>
+        <tr><td class="feature">Mass signature / QR codes</td><td><span class="check-yes">✓ Included</span></td><td>Enterprise plans only</td></tr>
+        <tr><td class="feature">No account needed for signers</td><td><span class="check-yes">✓ Always</span></td><td><span class="check-yes">✓ Usually</span></td></tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
@@ -378,57 +426,125 @@
   <div class="section-inner">
     <p class="section-label">Pricing</p>
     <h2>Simple, transparent pricing</h2>
-    <p style="color:rgba(255,255,255,.5);margin-bottom:48px;font-size:16px;">No hidden fees. No long-term contracts. No per-document fees.</p>
-
-    <div class="pricing-grid" style="grid-template-columns:repeat(2,1fr);max-width:760px;margin:0 auto;">
-
+    <p style="color:var(--text-muted);margin-bottom:48px;font-size:16px;">No hidden fees. No per-document charges. No long-term contracts.</p>
+    <div class="pricing-grid">
       <!-- Individual -->
       <div class="pricing-card">
         <div class="pricing-plan">Individual</div>
-        <div class="pricing-price">
-          <span class="amount">$4.99</span><span class="period">/mo</span>
-          <div class="annual-note" style="display:block;">or $49.99/year billed annually</div>
-        </div>
-        <div class="pricing-desc">For solo professionals, founders, and personal use.</div>
+        <div><span class="pricing-amount">$4.99</span><span class="pricing-period">/mo</span></div>
+        <div class="pricing-note">or $49.99/year — save 2 months</div>
+        <div class="pricing-desc">For solo professionals, founders, and freelancers.</div>
         <hr class="pricing-divider">
         <ul class="pricing-features">
           <li><span class="check">✓</span> Unlimited e-signature requests</li>
           <li><span class="check">✓</span> 10 GB secure document storage</li>
-          <li><span class="check">✓</span> All field types</li>
-          <li><span class="check">✓</span> Audit trail</li>
-          <li><span class="check">✓</span> Downloadable signed PDFs</li>
+          <li><span class="check">✓</span> All field types (signature, date, initials)</li>
+          <li><span class="check">✓</span> Full audit trail on every document</li>
+          <li><span class="check">✓</span> Executed PDF emailed to all parties</li>
           <li><span class="check">✓</span> Cancel anytime</li>
         </ul>
         <a href="https://app.draftsendsign.com" class="pricing-cta ghost">Get Started</a>
       </div>
-
       <!-- Business -->
       <div class="pricing-card featured">
         <div class="pricing-popular">Best for Teams</div>
         <div class="pricing-plan">Business</div>
-        <div class="pricing-price">
-          <span class="amount">$19.99</span><span class="period">/mo</span>
-          <div class="annual-note" style="display:block;">+ $2.99/mo per additional user</div>
-        </div>
-        <div class="pricing-desc">For companies and teams that need multiple users.</div>
+        <div><span class="pricing-amount">$19.99</span><span class="pricing-period">/mo</span></div>
+        <div class="pricing-note">+ $2.99/mo per additional user</div>
+        <div class="pricing-desc">For companies and teams that need shared access.</div>
         <hr class="pricing-divider">
         <ul class="pricing-features">
           <li><span class="check">✓</span> Everything in Individual</li>
-          <li><span class="check">✓</span> 100 GB shared storage</li>
+          <li><span class="check">✓</span> 100 GB shared team storage</li>
           <li><span class="check">✓</span> User management & team access</li>
           <li><span class="check">✓</span> Centralized document visibility</li>
-          <li><span class="check">✓</span> <strong style="color:#e84c35;">✦ AI Document Generator</strong></li>
-          <li><span class="check">✓</span> Scalable team pricing</li>
+          <li><span class="check">✓</span><strong style="color:var(--red-light);"> ✦ AI Document Generator</strong></li>
+          <li><span class="check">✓</span> Custom branding on signing pages</li>
         </ul>
         <a href="https://app.draftsendsign.com" class="pricing-cta primary">Get Started</a>
       </div>
     </div>
-
-    <p style="text-align:center;margin-top:32px;font-size:13px;color:rgba(255,255,255,.3);">
-      Additional storage available as needed · No setup fees · No long-term contracts ·
-      <a href="mailto:help@draftsendsign.com" style="color:rgba(200,33,13,.8);text-decoration:none;">Contact us</a> for custom plans
+    <p style="text-align:center;margin-top:28px;font-size:13px;color:var(--text-faint);">
+      Need a custom plan? <a href="mailto:help@draftsendsign.com" style="color:rgba(200,33,13,.8);text-decoration:none;">Contact us</a> · Additional storage available on any plan
     </p>
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="section-inner">
+    <p class="section-label">Questions</p>
+    <h2>Frequently asked</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Are DraftSendSign signatures legally binding?<svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="faq-a">Yes. DraftSendSign captures the signer's intent, IP address, timestamp, and consent — meeting the legal requirements of the ESIGN Act (US), UETA, and eIDAS (EU). Every completed document includes a full audit trail and signing certificate.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do my signers need to create an account?<svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="faq-a">No. Signers receive a unique secure link by email and can sign directly in their browser — no account, no app, no friction.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is there a limit on how many documents I can send?<svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="faq-a">No limits — both plans include unlimited e-signature requests. You'll never be charged per document or per signature.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What file types are supported?<svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="faq-a">DraftSendSign works with PDF files. If you have a Word document or other format, simply export it as a PDF first (File → Save As → PDF in Word works perfectly).</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What happens after everyone signs?<svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="faq-a">The moment the last person signs, DraftSendSign automatically emails the executed PDF — with all signatures embedded — to every party. No manual steps required.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can I cancel anytime?<svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="faq-a">Yes. Cancel anytime from your account — no questions asked, no cancellation fees. Your signed documents remain accessible through the end of your billing period.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- BOTTOM CTA -->
+<section class="cta-bottom">
+  <div class="section-inner">
+    <h2>Ready to get your first document signed?</h2>
+    <p>Set up your account in two minutes. No credit card required.</p>
+    <div class="cta-buttons">
+      <a href="https://app.draftsendsign.com" class="btn-primary" style="font-size:16px;padding:15px 36px;">Start for Free</a>
+      <a href="mailto:help@draftsendsign.com" class="btn-ghost" style="font-size:16px;padding:15px 32px;">Talk to Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="section-inner">
+    <div class="footer-inner">
+      <img src="assets/dss-wordmark.jpg" alt="DraftSendSign" style="height:22px;width:auto;opacity:.7;">
+      <div class="footer-links">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="/legal/terms.html">Terms</a>
+        <a href="/legal/privacy.html">Privacy</a>
+        <a href="mailto:help@draftsendsign.com">Contact</a>
+      </div>
+      <p style="font-size:12px;color:var(--text-faint);margin:0;">© 2026 DraftSendSign</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+</body>
+</html>
